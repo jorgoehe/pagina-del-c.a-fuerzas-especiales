@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Atlético Fuerzas Especiales</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #000000;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #eaaa00;
+        }
+
+        section {
+            padding: 100px 2rem 60px;
+            min-height: 100vh;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #000000;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #000000;
+            display: inline-block;
+        }
+
+        #inicio {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('img/FOTOGRAFIA.png') center/cover;
+            color: #ffffff;
+            min-height: 100vh;
+            max-width: 100%;
+        }
+
+        #inicio h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #inicio p {
+            font-size: 1.4rem;
+            max-width: 600px;
+        }
+
+        .contenedor-historia-img {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .contenedor-historia-img img {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            object-fit: cover;
+        }
+
+        .pie-imagen {
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .grid-plantel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tarjeta-jugador {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            padding-bottom: 1rem;
+        }
+
+        .tarjeta-jugador img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .formulario-socios {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 600px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn-enviar {
+            background: #000000;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-enviar:hover {
+            background: #0f213d;
+        }
+
+
+        .grid-uniformes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tarjeta-uniforme {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .tarjeta-uniforme img {
+            width: 100%;
+            height: 280px;
+            object-fit: contain;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+        }
+
+        .tarjeta-uniforme h3 {
+            margin-top: 1rem;
+            font-size: 1.3rem;
+            color: #000;
+        }
+
+        .tarjeta-uniforme p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+
+        .contenedor-partidos {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tarjeta-partido {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .fecha-partido {
+            background: #000000;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .equipos-partido {
+            font-size: 1.2rem;
+            font-weight: bold;
+            flex: 1;
+            text-align: center;
+        }
+
+        .vs {
+            color: #eaaa00;
+            margin: 0 0.5rem;
+        }
+
+        .detalles-partido {
+            color: #666;
+            font-size: 0.95rem;
+            text-align: right;
+            min-width: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a class="contenedor-logo">
+                <img src="img/logo.png" alt="Logo C.A Fuerzas Especiales" class="img-logo">
+                <span class="logo">C.A. Fuerzas Especiales</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#plantel">Plantel</a></li>
+                <li><a href="#uniformes">Uniformes</a></li>
+                <li><a href="#partidos">Partidos</a></li>
+                <li><a href="#socios">Socios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio">
+        <h1>Club Atlético Fuerzas Especiales</h1>
+        <p>El mejor peor club de toda Argentina (y seguirá así)</p>
+    </section>
+
+    <section id="historia">
+        <h2>Nuestra Historia</h2>
+        <p style="margin-top: 1rem;">Todo empezó en el año 1523 cuando Lautaro Pavetti decidió fundar el "Club Sportivo Fuerzas Especiales" cerca de una polleria llamada "Polleria Manolo", siendo ese el Primer patrocinador del Club.</p>
+        <p style="margin-top: 1rem;">Desde el 1842 hasta la actualidad, Lautaro Pavetti ha tomado el mando del club y lo ha renombrado a "Club Atletico Fuerzas Especiales". Ganaron 4 Libertadores, 3 Sudamericanas, 2 Mundiales de Clubes y una Intercontinental en total. En el 2016, el club recibió el premio al "Mejor club de Todos los Tiempos" en los premios especiales Willyrex. Hoy en dia el plantel ya no se ubica cerca de esa polleria, ahora se ubica debajo de La Pedrera. Para acceder a él hay que ingresar desde los canales que tiene el estadio y desplazarse en él hasta encontrar el plantel.</p>
+        
+        <div class="contenedor-historia-img">
+            <img src="img/FOTOGRAFIA1.png" alt="Foto de Lautaro Pavetti">
+            <p class="pie-imagen">Construccion del Estadio (Él mismo construyó el estadio con el modo creativo) Para ese momento, la cancha debajo de la pedrera ya habia sido construido junto con la entrada que era un tunel de tierra que iba directo a la cancha. Agosto 2009</p>
+        </div>
+
+        <div class="contenedor-historia-img">
+            <img src="img/FOTOGRAFIA.png" alt="Foto de Lautaro Pavetti 2">
+            <p class="pie-imagen">Una foto de Lautaro Pavetti en La Pedrera con un fisura que habia por ahí que también era hincha del Fuerzas Especiales. Abril 2014</p>
+        </div>
+    </section>
+
+    <section id="plantel">
+        <h2>Plantel Casi Profesional</h2>
+        <h1 style="color: red;"><center>AVISO: CASI TODO EL PLANTEL SE COMPONE DE PERSONAS CON PROBLEMAS MENTALES SEVEROS, DEFORMIDADES O CAUSAS ABIERTAS. TODOS SON MUY BUENOS JUGADORES, PERO NINGUNO ES LIONEL MESSI </center></h1>
+        <div class="grid-plantel">
+            <!-- Director Técnico -->
+            <div class="tarjeta-jugador">
+                <img src="img/dt.png" alt="Lautaro Pavetti">
+                <h3 style="margin-top: 0.5rem;">Lautaro Pavetti</h3>
+                <p>Director Técnico y Dueño del Club - 1842 - Actualidad</p>
+            </div>
+            
+            <div class="tarjeta-jugador">
+                <img src="img/1.png" alt="Mauricio Quiroga">
+                <h3 style="margin-top: 0.5rem;">Mauricio Quiroga</h3>
+                <p>Arquero - #1</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/2.png" alt="Mauro Sosa">
+                <h3 style="margin-top: 0.5rem;">Mauro Sosa</h3>
+                <p>Defensa Central - #2</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/3.png" alt="Morelio Caca">
+                <h3 style="margin-top: 0.5rem;">Morelio Caca</h3>
+                <p>Defensa Central - #3</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/4.png" alt="Orlando Jojali">
+                <h3 style="margin-top: 0.5rem;">Orlando Jojali</h3>
+                <p>Lateral Derecho - #4</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/5.png" alt="Mario Pérez">
+                <h3 style="margin-top: 0.5rem;">Mario Pérez</h3>
+                <p>Lateral Izquierdo - #5</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/6.png" alt="Crajsua Molotov">
+                <h3 style="margin-top: 0.5rem;">Crajsua Molotov</h3>
+                <p>Medio Izquierdo - #6</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/7.png" alt="Marcos Ramirez">
+                <h3 style="margin-top: 0.5rem;">Marcos Ramirez</h3>
+                <p>Medio Ofensivo - #7</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/8.png" alt="Samuel De Luque">
+                <h3 style="margin-top: 0.5rem;">Samuel De Luque</h3>
+                <p>Medio Ofensivo - #8</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/9.png" alt="Tiago Bosta">
+                <h3 style="margin-top: 0.5rem;">Tiago Bosta</h3>
+                <p>Extremo Derecho - #9</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/10.png" alt="Vé Sole">
+                <h3 style="margin-top: 0.5rem;">Vé Sole</h3>
+                <p>Extremo Izquierdo - #10</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/11.png" alt="Verbo Sajacva">
+                <h3 style="margin-top: 0.5rem;">Verbo Sajacva</h3>
+                <p>Centro Delantero - #11</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/12.png" alt="Cristian Parrilla">
+                <h3 style="margin-top: 0.5rem;">Cristian Parrilla</h3>
+                <p>Arquero - #12</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/13.png" alt="Dante Rodriguez">
+                <h3 style="margin-top: 0.5rem;">Dante Rodriguez</h3>
+                <p>Arquero - #13</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/14.png" alt="Ubimib Mublbul">
+                <h3 style="margin-top: 0.5rem;">Ubimib Mublbul</h3>
+                <p>Lateral Izquierdo - #14</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/15.png" alt="Jusá Juj">
+                <h3 style="margin-top: 0.5rem;">Jusá Juj</h3>
+                <p>Lateral Izquierdo - #15</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/16.png" alt="Pedro Spadaro">
+                <h3 style="margin-top: 0.5rem;">Pedro Spadaro</h3>
+                <p>Defensa Central - #16</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/17.png" alt="James Simpson Nev">
+                <h3 style="margin-top: 0.5rem;">James Simpson Nev</h3>
+                <p>Mediocampista Central - #17</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/18.png" alt="Nisuka Kagasawa">
+                <h3 style="margin-top: 0.5rem;">Nisuka Kagasawa</h3>
+                <p>Medio Izquierdo - #18</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/19.png" alt="Marcos Cucaracha">
+                <h3 style="margin-top: 0.5rem;">Marcos Cucaracha</h3>
+                <p>Medio Izquierdo - #19</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/20.png" alt="Pelo">
+                <h3 style="margin-top: 0.5rem;">Pelo</h3>
+                <p>Medio Izquierdo - #20</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/21.png" alt="Meev Jaiv Kulhfaj">
+                <h3 style="margin-top: 0.5rem;">Meev Jaiv Kulhfaj</h3>
+                <p>Medio Defensivo Central - #21</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/22.png" alt="Concha">
+                <h3 style="margin-top: 0.5rem;">Concha</h3>
+                <p>Medio Derecho - #22</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/23.png" alt="Jorge Newells">
+                <h3 style="margin-top: 0.5rem;">Jorge Newells</h3>
+                <p>Centro Delantero - #23</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/24.png" alt="Rimulu Makélélé">
+                <h3 style="margin-top: 0.5rem;">Rimulu Makélélé</h3>
+                <p>Segundo Delantero - #24</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/25.png" alt="Mauro Messi">
+                <h3 style="margin-top: 0.5rem;">Mauro Messi</h3>
+                <p>Centro Delantero - #25</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/26.png" alt="Kiulu Mbappé">
+                <h3 style="margin-top: 0.5rem;">Kiulu Mbappé</h3>
+                <p>Segundo Delantero - #26</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/27.png" alt="Cagado">
+                <h3 style="margin-top: 0.5rem;">Cagado</h3>
+                <p>Extremo Izquierdo - #27</p>
+            </div>
+            <div class="tarjeta-jugador">
+                <img src="img/28.png" alt="Kac Bici">
+                <h3 style="margin-top: 0.5rem;">Kac Bici</h3>
+                <p>Medio Defensivo Central - #28</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="uniformes">
+        <h2>Indumentaria Oficial</h2>
+        <div class="grid-uniformes">
+            <div class="tarjeta-uniforme">
+                <img src="img/UNIFORME TITULAR.png" alt="Camiseta Titular">
+                <h3>Uniforme Titular</h3>
+                <p>Utilizada para los partidos en el subsuelo de La Pedrera.</p>
+            </div>
+            <div class="tarjeta-uniforme">
+                <h3>Uniforme Suplente (Por Ahora no hay)</h3>
+            </div>
+            <div class="tarjeta-uniforme">
+                <img src="img/arquero.png" alt="Camiseta Arquero">
+                <h3>Uniforme de Arquero</h3>
+                <p>Indumentaria oficial del Arquero.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="partidos">
+        <h2>Próximos Partidos</h2>
+        <div class="contenedor-partidos">
+            <div class="tarjeta-partido">
+                <div class="fecha-partido">23 NOV - 21:30</div>
+                <div class="equipos-partido">C.A. Fuerzas Especiales <span class="vs">VS</span> Argelia</div>
+                <div class="detalles-partido">Cancha de Discapacidad Mayor (Debajo de la Pedrera)</div>
+            </div>
+            <div class="tarjeta-partido">
+                <div class="fecha-partido">19 DIC - 20:00</div>
+                <div class="equipos-partido">San Martin (San Juan) <span class="vs">VS</span> C.A. Fuerzas Especiales</div>
+                <div class="detalles-partido">Estadio Ingeniero Hilario Sanchez</div>
+            </div>
+            <div class="tarjeta-partido">
+                <div class="fecha-partido">25 DIC - 23:50</div>
+                <div class="equipos-partido">C.A Newbery <span class="vs">VS</span> C.A. Fuerzas Especiales</div>
+                <div class="detalles-partido">Estadio Osvaldo Centioni</div>
+            </div>
+            <div class="tarjeta-partido">
+                <div class="fecha-partido">21 FEB - 19:00</div>
+                <div class="equipos-partido">C.A Fuerzas Especiales <span class="vs">VS</span> Newells Old Boys</div>
+                <div class="detalles-partido">Cancha de Discapacidad Mayor (Debajo de la Pedrera)</div>
+            </div>
+            <div class="tarjeta-partido">
+                <div class="fecha-partido">15 MAR - 23:50</div>
+                <div class="equipos-partido">C.A. Fuerzas Especiales <span class="vs">VS</span> Talleres</div>
+                <div class="detalles-partido">Cancha de Discapacidad Mayor (Debajo de la Pedrera)</div>
+            </div>
+            <div class="tarjeta-partido">
+                <div class="fecha-partido">24 ABR - 13:30</div>
+                <div class="equipos-partido">C.A Fuerzas Especiales <span class="vs">VS</span> Racing de Cordoba</div>
+                <div class="detalles-partido">Cancha de Discapacidad Mayor (Debajo de la Pedrera)</div>
+            </div>
+            <div class="tarjeta-partido">
+                <div class="fecha-partido">18 JUN - 13:30</div>
+                <div class="equipos-partido">Real Sociedad <span class="vs">VS</span> C.A Fuerzas Especiales</div>
+                <div class="detalles-partido">Reale Arena</div>
+        </div>
+    </section>
+
+    <section id="socios">
+        <h2>Hacete Socio</h2>
+        <p>Por favor así me ayudás a pagar la deuda con la AFIP.</p>
+        
+        <form class="formulario-socios" onsubmit="event.preventDefault(); alert('¡Solicitud enviada!');">
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" required placeholder="tuemail@ejemplo.com">
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoría de Socio:</label>
+                <select id="categoria">
+                    <option value="activo">Socio Activo</option>
+                    <option value="cadete">Socio Cadete (Menores de 18)</option>
+                    <option value="grupo">Grupo Familiar</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-enviar">Asociarme</button>
+        </form>
+    </section>
+
+</body>
+</html>
