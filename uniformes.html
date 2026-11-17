@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniformes | Club Atlético Fuerzas Especiales</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="contenedor-logo" href="index.html" aria-label="Ir al inicio">
+                <img src="img/logo.png" alt="" class="img-logo">
+                <span class="logo">C.A. Fuerzas Especiales</span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#historia">Historia</a></li>
+                <li><a href="plantel.html">Plantel</a></li>
+                <li><a href="uniformes.html" aria-current="page">Uniformes</a></li>
+                <li><a href="partidos.html">Partidos</a></li>
+                <li><a href="socios.html">Socios</a></li>
+                <li class="nav-more">
+                    <button class="nav-more-toggle" type="button" aria-expanded="false" aria-controls="menu-extra">Más</button>
+                    <ul class="nav-more-menu" id="menu-extra" hidden>
+                        <li><a href="posicion.html">Posición en la tabla de la liga</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="imagenes.html">Imágenes</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="page-content">
+    <section id="uniformes">
+        <h2>Indumentaria Oficial</h2>
+        <div class="grid-uniformes">
+            <div class="tarjeta-uniforme">
+                <img src="img/UNIFORME TITULAR.png" alt="Camiseta Titular">
+                <h3>Uniforme Titular</h3>
+                <p>Utilizada para los partidos en el subsuelo de La Pedrera.</p>
+            </div>
+            <div class="tarjeta-uniforme">
+                <h3>Uniforme Suplente (Por Ahora no hay)</h3>
+            </div>
+            <div class="tarjeta-uniforme">
+                <img src="img/arquero.png" alt="Camiseta Arquero">
+                <h3>Uniforme de Arquero</h3>
+                <p>Indumentaria oficial del Arquero.</p>
+            </div>
+        </div>
+    </section>
+    </main>
+    <script src="cacao.js"></script>
+</body>
+</html>

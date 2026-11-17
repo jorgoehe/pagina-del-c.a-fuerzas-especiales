@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socios | Club Atlético Fuerzas Especiales</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="contenedor-logo" href="index.html" aria-label="Ir al inicio">
+                <img src="img/logo.png" alt="" class="img-logo">
+                <span class="logo">C.A. Fuerzas Especiales</span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#historia">Historia</a></li>
+                <li><a href="plantel.html">Plantel</a></li>
+                <li><a href="uniformes.html">Uniformes</a></li>
+                <li><a href="partidos.html">Partidos</a></li>
+                <li><a href="socios.html" aria-current="page">Socios</a></li>
+                <li class="nav-more">
+                    <button class="nav-more-toggle" type="button" aria-expanded="false" aria-controls="menu-extra">Más</button>
+                    <ul class="nav-more-menu" id="menu-extra" hidden>
+                        <li><a href="posicion.html">Posición en la tabla de la liga</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="imagenes.html">Imágenes</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="page-content">
+    <section id="socios">
+        <h2>Hacete Socio</h2>
+        <p>Por favor así me ayudás a pagar la deuda con la AFIP.</p>
+        
+        <form id="form" class="formulario-socios">
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" required placeholder="tuemail@ejemplo.com">
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoría de Socio:</label>
+                <select id="categoria">
+                    <option value="activo">Socio Activo</option>
+                    <option value="cadete">Socio Cadete (Menores de 18)</option>
+                    <option value="grupo">Grupo Familiar</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-enviar">Asociarme</button>
+            <p id="mensaje" aria-live="polite" style="margin-top: 1rem; color: #0b6e40; font-weight: 600;"></p>
+        </form>
+    </section>
+    </main>
+    <script src="cacao.js"></script>
+</body>
+</html>

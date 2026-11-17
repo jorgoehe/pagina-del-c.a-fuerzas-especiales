@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posición en la liga | Club Atlético Fuerzas Especiales</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="contenedor-logo" href="index.html" aria-label="Ir al inicio">
+                <img src="img/logo.png" alt="" class="img-logo">
+                <span class="logo">C.A. Fuerzas Especiales</span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#historia">Historia</a></li>
+                <li><a href="plantel.html">Plantel</a></li>
+                <li><a href="uniformes.html">Uniformes</a></li>
+                <li><a href="partidos.html">Partidos</a></li>
+                <li><a href="socios.html">Socios</a></li>
+                <li class="nav-more">
+                    <button class="nav-more-toggle" type="button" aria-expanded="false" aria-controls="menu-extra">Más</button>
+                    <ul class="nav-more-menu" id="menu-extra" hidden>
+                        <li><a href="posicion.html" aria-current="page">Posición en la tabla de la liga</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="imagenes.html">Imágenes</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="page-content">
+        <section id="posicion">
+            <h2>Posición actual en la Liga Discapacitada de Fútbol</h2>
+            <div class="tabla-posiciones">
+                <p>Tabla general</p>
+                <div class="tabla-liga-scroll" role="region" aria-label="Tabla general de posiciones" tabindex="0">
+                    <table class="tabla-liga">
+                        <caption>Posiciones y rendimiento</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Pos.</th>
+                                <th scope="col">Equipo</th>
+                                <th scope="col" title="Puntos">Pts</th>
+                                <th scope="col" title="Partidos jugados">PJ</th>
+                                <th scope="col" title="Partidos ganados">PG</th>
+                                <th scope="col" title="Partidos empatados">PE</th>
+                                <th scope="col" title="Partidos perdidos">PP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="equipo-destacado">
+                                <th scope="row">1</th>
+                                <td>C.A. Fuerzas Especiales</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="equipo-destacado">
+                                <th scope="row">2</th>
+                                <td>Rebels FC</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="nota-posiciones">Los puntos y resultados se completarán cuando estén disponibles los datos de la liga.</p>
+            </div>
+        </section>
+    </main>
+    <script src="cacao.js"></script>
+</body>
+</html>

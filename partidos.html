@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partidos | Club Atlético Fuerzas Especiales</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="contenedor-logo" href="index.html" aria-label="Ir al inicio">
+                <img src="img/logo.png" alt="" class="img-logo">
+                <span class="logo">C.A. Fuerzas Especiales</span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#historia">Historia</a></li>
+                <li><a href="plantel.html">Plantel</a></li>
+                <li><a href="uniformes.html">Uniformes</a></li>
+                <li><a href="partidos.html" aria-current="page">Partidos</a></li>
+                <li><a href="socios.html">Socios</a></li>
+                <li class="nav-more">
+                    <button class="nav-more-toggle" type="button" aria-expanded="false" aria-controls="menu-extra">Más</button>
+                    <ul class="nav-more-menu" id="menu-extra" hidden>
+                        <li><a href="posicion.html">Posición en la tabla de la liga</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="imagenes.html">Imágenes</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="page-content">
+    <section id="partidos">
+        <h2>Calendario de Partidos</h2>
+        <div class="calendario-partidos" id="calendario-partidos">
+            <div class="calendario-controles">
+                <button class="cambiar-mes" id="mes-anterior" type="button" aria-label="Mes anterior">&lsaquo;</button>
+                <h3 id="mes-visible" aria-live="polite"></h3>
+                <button class="cambiar-mes" id="mes-siguiente" type="button" aria-label="Mes siguiente">&rsaquo;</button>
+            </div>
+            <div class="calendario-layout">
+                <div class="calendario-mes">
+                    <div class="dias-semana" aria-hidden="true">
+                        <span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span>
+                    </div>
+                    <div class="calendario-dias" id="calendario-dias" aria-labelledby="mes-visible"></div>
+                    <p class="calendario-referencia"><span aria-hidden="true"></span> Día con partido</p>
+                </div>
+                <div class="calendario-lista">
+                    <h3>Partidos del mes</h3>
+                    <p class="sin-partidos" id="sin-partidos" hidden>No hay partidos programados este mes.</p>
+                    <div class="lista-eventos" id="lista-eventos">
+                        <article class="evento-partido" id="partido-2026-11-23" data-fecha="2026-11-23">
+                            <time datetime="2026-11-23T21:30">23 nov 2026 · 21:30</time>
+                            <p><strong>C.A. Fuerzas Especiales</strong> <span class="vs">VS</span> Argelia</p>
+                            <p class="lugar-partido">Cancha de Discapacidad Mayor (Debajo de la Pedrera)</p>
+                        </article>
+                        <article class="evento-partido" id="partido-2026-12-19" data-fecha="2026-12-19">
+                            <time datetime="2026-12-19T20:00">19 dic 2026 · 20:00</time>
+                            <p><strong>San Martin (San Juan)</strong> <span class="vs">VS</span> C.A. Fuerzas Especiales</p>
+                            <p class="lugar-partido">Estadio Ingeniero Hilario Sanchez</p>
+                        </article>
+                        <article class="evento-partido" id="partido-2026-12-25" data-fecha="2026-12-25">
+                            <time datetime="2026-12-25T23:50">25 dic 2026 · 23:50</time>
+                            <p><strong>C.A Newbery</strong> <span class="vs">VS</span> C.A. Fuerzas Especiales</p>
+                            <p class="lugar-partido">Estadio Osvaldo Centioni</p>
+                        </article>
+                        <article class="evento-partido" id="partido-2027-02-21" data-fecha="2027-02-21">
+                            <time datetime="2027-02-21T19:00">21 feb 2027 · 19:00</time>
+                            <p><strong>C.A Fuerzas Especiales</strong> <span class="vs">VS</span> Newells Old Boys</p>
+                            <p class="lugar-partido">Cancha de Discapacidad Mayor (Debajo de la Pedrera)</p>
+                        </article>
+                        <article class="evento-partido" id="partido-2027-03-15" data-fecha="2027-03-15">
+                            <time datetime="2027-03-15T23:50">15 mar 2027 · 23:50</time>
+                            <p><strong>C.A. Fuerzas Especiales</strong> <span class="vs">VS</span> Talleres</p>
+                            <p class="lugar-partido">Cancha de Discapacidad Mayor (Debajo de la Pedrera)</p>
+                        </article>
+                        <article class="evento-partido" id="partido-2027-04-24" data-fecha="2027-04-24">
+                            <time datetime="2027-04-24T13:30">24 abr 2027 · 13:30</time>
+                            <p><strong>C.A Fuerzas Especiales</strong> <span class="vs">VS</span> Racing de Cordoba</p>
+                            <p class="lugar-partido">Cancha de Discapacidad Mayor (Debajo de la Pedrera)</p>
+                        </article>
+                        <article class="evento-partido" id="partido-2027-06-18" data-fecha="2027-06-18">
+                            <time datetime="2027-06-18T13:30">18 jun 2027 · 13:30</time>
+                            <p><strong>Real Sociedad</strong> <span class="vs">VS</span> C.A Fuerzas Especiales</p>
+                            <p class="lugar-partido">Reale Arena</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+    <script src="cacao.js"></script>
+</body>
+</html>
